@@ -1,0 +1,108 @@
+import math
+
+while True:
+    print("Pilih bangun 2 dimensi atau 3 dimensi (ketik 'keluar' untuk mengakhiri program):")
+    pilihan = input("Anda memilih: ") #masukkan pilihan
+
+    if pilihan.lower() == "keluar": #jika memilih keluar maka program selesai
+        print("Terimakasih.") #akan muncul terimakasih jika memilih keluar
+        break #menghentikan sebuah loop
+    elif pilihan == "2 dimensi": #jika memilih 2 dimensi maka, akan muncul pilihan berikut
+        print("Pilih bangun 2 dimensi yang akan dihitung luasnya:")
+        print("1. Persegi")
+        print("2. Persegi Panjang")
+        print("3. Segitiga")
+        print("4. Lingkaran")
+        print("5. Jajargenjang")
+        print("6. Trapesium")
+        pilihan2 = int(input("Anda memilih: ")) #masukkan pilihan
+
+        if pilihan2 == 1: #jika memilih 1 maka memilih persegi
+            sisi = float(input("Masukkan panjang sisi: ")) #memasukkan panjang sisi
+            luas = sisi ** 2 #rumus luas persegi
+            print("Luas persegi adalah", luas) #mengeprint luas persegi
+        elif pilihan2 == 2: #jika memilih 2 maka memilih persegi panjang
+            panjang = float(input("Masukkan panjang: ")) #memasukkan panjang sisi
+            lebar = float(input("Masukkan lebar: ")) #memasukkan lebar sisi
+            luas = panjang * lebar #rumus luas persegi panjang
+            print("Luas persegi panjang adalah", luas) #mengeprint luas persegi panjang
+        elif pilihan2 == 3: #jika memilih 3 maka memilih segitiga
+            alas = float(input("Masukkan alas: ")) #masukkan nilai alas
+            tinggi = float(input("Masukkan tinggi: "))  #masukkan nilai tinggi
+            luas = 0.5 * alas * tinggi #rumus luas segitiga
+            print("Luas segitiga adalah", luas) #mengeprint luas segitiga
+        elif pilihan2 == 4: #jika memilih 4 maka memilih lingkaran
+            jari_jari = float(input("Masukkan jari-jari: ")) #masukkan nilai jari-jari
+            luas = math.pi * jari_jari ** 2 #rumus laus lingkaran
+            print("Luas lingkaran adalah", luas) #mengeprint luas lingkaran
+        elif pilihan2 == 5: #jika memilih 5 maka memilih jajargenjang
+            alas = float(input("Masukkan alas: ")) #masukkan nilai alas
+            tinggi = float(input("Masukkan tinggi: ")) #masukkan nilai tinggi
+            luas = alas * tinggi #rumus luas jajargenjang
+            print("Luas jajargenjang adalah", luas) #mengeprint luas jajargenjang
+        elif pilihan2 == 6: #jika memilih 6 maka memilih trapesium
+            sisi_sejajar1 = float(input("Masukkan sisi sejajar 1: ")) #masukkan nilai sejajar 1
+            sisi_sejajar2 = float(input("Masukkan sisi sejajar 2: ")) #masukkan nilai sejajar 2
+            tinggi = float(input("Masukkan tinggi: "))  #masukkan nilai tinggi
+            luas = 0.5 * (sisi_sejajar1 + sisi_sejajar2) * tinggi #rumus luas trapesium
+            print("Luas trapesium adalah", luas) #mengeprint luas trapesium
+        else:
+            print("Pilihan tidak valid.") #jika tidak dipilih maka akan error
+    elif pilihan == "3 dimensi": #jika memilih 3 dimensi maka, akan muncul pilihan berikut
+        print("Pilih bangun 3 dimensi yang akan dihitung volume dan luas permukaannya:")
+        print("1. Kubus")
+        print("2. Balok")
+        print("3. Tabung")
+        print("4. Kerucut")
+        print("5. Limas")
+        print("6. Prisma")
+        pilihan2 = int(input("Anda memilih: ")) #masukkan pilihan
+
+        if pilihan2 == 1: #jika memilih 1 maka memilih kubus
+            sisi = float(input("Masukkan panjang sisi: ")) #masukkan nilai panjang
+            volume = sisi ** 3 #rumus volume kubus
+            luas_permukaan = 6 * sisi ** 2 #rumus luas permukaan kubus
+            print("Volume kubus adalah", volume) #mengeprint volume kubus
+            print("Luas permukaan kubus adalah", luas_permukaan) #mengeprint luas permukaan kubus
+        elif pilihan2 == 2: #jika memilih 2 maka memilih balok
+            panjang = float(input("Masukkan panjang: ")) #masukkan nilai panjang
+            lebar = float(input("Masukkan lebar: ")) #masukkan nilai lebar
+            tinggi = float(input("Masukkan tinggi: ")) #masukkan nilai tinggi
+            volume = panjang * lebar * tinggi #rumus volume
+            luas_permukaan = 2 * ((panjang * lebar) + (panjang * tinggi) + (lebar * tinggi)) #rumus luas permukaan balok
+            print("Volume balok adalah", volume) #mengeprint volume balok
+            print("Luas permukaan balok adalah", luas_permukaan) #mengeprint luas permukaan balok
+        elif pilihan2 == 3: #jika memilih 3 maka memilih tabung
+            jari_jari = float(input("Masukkan jari-jari: ")) #masukkan jari-jari
+            tinggi = float(input("Masukkan tinggi: ")) #masukkan tinggi
+            volume = math.pi * jari_jari ** 2 * tinggi #rumus volume
+            luas_permukaan = 2 * math.pi * jari_jari * (jari_jari + tinggi) #rumus luas permukaan
+            print("Volume tabung adalah", volume) #mengeprint volume tabung
+            print("Luas permukaan tabung adalah", luas_permukaan) #mengeprint luas permukaan tabung
+        elif pilihan2 == 4: #jika memilih 4 maka memilih kerucut
+            jari_jari = float(input("Masukkan jari-jari: ")) #masukkan jari-jari
+            tinggi = float(input("Masukkan tinggi: ")) #masukkan tinggi
+            garis_pelukis = math.sqrt(jari_jari ** 2 + tinggi ** 2)  #rumus garis pelukis
+            volume = 1 / 3 * math.pi * jari_jari ** 2 * tinggi #rumus volume kerucut
+            luas_permukaan = math.pi * jari_jari * garis_pelukis + math.pi * jari_jari ** 2 #rumus luas permukaan 
+            print("Volume kerucut adalah", volume) #mengeprint volume kerucut
+            print("Luas permukaan kerucut adalah", luas_permukaan) #mengeprint luas permukaan kerucut
+        elif pilihan2 == 5: #jika memilih 5 maka memilih kerucut
+            alas = float(input("Masukkan luas alas: ")) #masukkan alas limas
+            tinggi = float(input("Masukkan tinggi: ")) #masukkan tinggi limas
+            volume = 1 / 3 * alas * tinggi #rumus volume limas
+            luas_permukaan = alas + 2 * math.sqrt((alas / 4) ** 2 + tinggi ** 2) #rumus luas permukaan limas
+            print("Volume limas adalah", volume) #mengeprint volume limas
+            print("Luas permukaan limas adalah", luas_permukaan) #mengeprint luas permukaan limas
+        elif pilihan2 == 6: #jika memilih 6 maka memilih prisma
+            alas = float(input("Masukkan luas alas: ")) #masukkan alas prisma
+            tinggi_alas = float(input("Masukkan tinggi alas: ")) #masukkan tinggi alas prisma
+            tinggi_prisma = float(input("Masukkan tinggi prisma: ")) #masukkan tinggi prisma
+            volume = alas * tinggi_alas * tinggi_prisma #rumus volume prisma
+            luas_permukaan = 2 * alas + (tinggi_alas + tinggi_prisma) * (2 * math.sqrt((alas / (2 * math.cos(math.pi / 6))) 
+                            ** 2 + (tinggi_alas - tinggi_prisma) ** 2) + 3 * alas) # rumus luas permukaan prisma
+            print("Volume prisma adalah", volume) #mengeprint volume prisma
+            print("Luas permukaan prisma adalah", luas_permukaan) #mengeprint luas permukaan prisma
+        else:
+            print("Pilihan tidak valid.") #jika pilihan salah maka akan print pilihan tidak valid
+       
